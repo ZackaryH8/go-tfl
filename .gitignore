@@ -24,4 +24,7 @@ _testmain.go
 *.prof
 
 /vendor
-.vscode/
+
+# IDEs and Code Editors
+.idea
+.vscode
