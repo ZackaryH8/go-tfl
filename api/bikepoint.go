@@ -17,14 +17,14 @@ const (
 func (c *Client) BikePointGetAll() (BikePoints, error) {
 	var (
 		response BikePoints
-		url      = fmt.Sprintf(
+		uri      = fmt.Sprintf(
 			"%s?%s",
 			c.getEndpointURL(EndpointBikePoint),
 			c.getAuthArgs(),
 		)
 	)
 
-	err := c.getJSON(url, &response)
+	err := c.getJSON(uri, &response)
 	return response, err
 }
 
@@ -34,7 +34,7 @@ func (c *Client) BikePointGetAll() (BikePoints, error) {
 func (c *Client) BikePointGetByID(id string) (*BikePoint, error) {
 	var (
 		response BikePoint
-		url      = fmt.Sprintf(
+		uri      = fmt.Sprintf(
 			"%s/%s?%s",
 			c.getEndpointURL(EndpointBikePoint),
 			id,
@@ -42,7 +42,7 @@ func (c *Client) BikePointGetByID(id string) (*BikePoint, error) {
 		)
 	)
 
-	err := c.getJSON(url, &response)
+	err := c.getJSON(uri, &response)
 	return &response, err
 }
 
@@ -54,7 +54,7 @@ func (c *Client) BikePointInRectangle(swLat, swLon, neLat, neLon float64) (
 	BikePoints, error) {
 	var (
 		response BikePoints
-		url      = fmt.Sprintf(
+		uri      = fmt.Sprintf(
 			"%s?swLat=%f&swLon=%f&neLat=%f&neLon=%f&%s",
 			c.getEndpointURL(EndpointBikePoint),
 			swLat,
@@ -65,7 +65,7 @@ func (c *Client) BikePointInRectangle(swLat, swLon, neLat, neLon float64) (
 		)
 	)
 
-	err := c.getJSON(url, &response)
+	err := c.getJSON(uri, &response)
 	return response, err
 }
 
@@ -76,7 +76,7 @@ func (c *Client) BikePointInRectangle(swLat, swLon, neLat, neLon float64) (
 func (c *Client) BikePointInLocus(lat, lon float64, radius int) (BikePointsLocus, error) {
 	var (
 		response BikePointsLocus
-		url      = fmt.Sprintf(
+		uri      = fmt.Sprintf(
 			"%s?lat=%f&lon=%f&radius=%d&%s",
 			c.getEndpointURL(EndpointBikePoint),
 			lat,
@@ -86,7 +86,7 @@ func (c *Client) BikePointInLocus(lat, lon float64, radius int) (BikePointsLocus
 		)
 	)
 
-	err := c.getJSON(url, &response)
+	err := c.getJSON(uri, &response)
 	return response, err
 }
 
@@ -97,7 +97,7 @@ func (c *Client) BikePointInLocus(lat, lon float64, radius int) (BikePointsLocus
 func (c *Client) BikePointSearch(query string) (BikePoints, error) {
 	var (
 		response BikePoints
-		url      = fmt.Sprintf(
+		uri      = fmt.Sprintf(
 			"%s/Search?query=%s&%s",
 			c.getEndpointURL(EndpointBikePoint),
 			url.QueryEscape(query),
@@ -105,7 +105,7 @@ func (c *Client) BikePointSearch(query string) (BikePoints, error) {
 		)
 	)
 
-	log.Println(url)
-	err := c.getJSON(url, &response)
+	log.Println(uri)
+	err := c.getJSON(uri, &response)
 	return response, err
 }
