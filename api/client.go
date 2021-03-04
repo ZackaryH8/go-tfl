@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"strings"
 )
 
 const (
@@ -88,6 +89,10 @@ func (c *Client) getAuthArgs() string {
 
 func (c *Client) getEndpointURL(endpoint string) string {
 	return fmt.Sprintf("%s/%s", c.rootURL, endpoint)
+}
+
+func (c *Client) arrayToCSV(array []string) string {
+	return strings.Trim(strings.Join(strings.Fields(fmt.Sprint(array)), ","), "[]")
 }
 
 // Errors
