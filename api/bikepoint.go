@@ -6,7 +6,7 @@ import (
 	"net/url"
 )
 
-// Contants
+// Contsants
 const (
 	EndpointBikePoint = "BikePoint"
 )
