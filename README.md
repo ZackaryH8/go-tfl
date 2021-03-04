@@ -1,25 +1,13 @@
-# go-tfl
+<p align="center">
+    <img width="200" src="https://blog.tfl.gov.uk/wp-content/uploads/2018/05/cropped-logo_roundel-2.png" alt="TfL Logo">
+    <h1 align="center">Go TFL</h1>
+    <p align="center">A golang client for using the Transport for London Unified API</p>
+</p>
 
-A golang client for using the [Transport for London Unified API](https://api.tfl.gov.uk/)
 
-## completion
+## Example Usage
 
-The sections currently implemented are:
-- [ ] Accident Stats
-- [ ] Air Quality
-- [x] Bike Point
-- [ ] Cycle Superhighway
-- [ ] Journey
-- [ ] Line
-- [ ] Mode
-- [ ] Notification
-- [ ] Occupancy
-- [ ] Place
-- [ ] Road
-- [ ] Search
-- [ ] Stop Point
+**Coming Soon**
 
-## examples
-
-Examples of how to use the API are given (here)[examples]
-
+## Disclaimer
+This repository is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Transport for London (TfL) or it's parent organisation Greater London Authority (GLA)
